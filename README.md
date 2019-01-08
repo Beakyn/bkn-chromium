@@ -5,3 +5,5 @@
 > This project its in **alpha** so don't use it in production
 
 A generic Chromium Puppeteer renderer with domain whitelist support hosted on Zeit Now.
+
+> This project its based on this blog post and example https://zeit.co/blog/serverless-chrome
