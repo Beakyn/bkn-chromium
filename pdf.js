@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   try {
     const {pathname = '/', query = {}} = parse(req.url, true);
     const url = getUrlFromPath(pathname);
-    const date = new Date().toISOString().split('.')[0];
+    const date = new Date().toISOString().split('.')[0].replace(/:/g, '-');
 
     if (!isValidUrl(url)) {
       res.statusCode = 400;
