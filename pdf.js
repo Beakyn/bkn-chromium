@@ -2,7 +2,7 @@ const {parse} = require('url');
 const {getPDF} = require('./chromium-pdf');
 const {getInt, getUrlFromPath, isValidUrl} = require('./validator');
 
-module.exports = async function (req, res) {
+module.exports = async (req, res) => {
   try {
     const {pathname = '/', query = {}} = parse(req.url, true);
     const url = getUrlFromPath(pathname);
@@ -16,7 +16,7 @@ module.exports = async function (req, res) {
 
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/pdf');
-      res.setHeader('Content-Disposition', 'attachment; filename=site.pdf');
+      res.setHeader('Content-Disposition', `attachment; filename=proposal.pdf`);
       res.end(file);
     }
   } catch (error) {

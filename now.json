@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alias": ["pdf.proposal.bkn.fun"],
   "builds": [
     {"src": "public/*", "use": "@now/static"},
     {"src": "screenshot.js", "use": "@now/node", "config": {"maxLambdaSize": "40mb"}},
