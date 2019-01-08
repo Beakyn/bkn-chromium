@@ -32,10 +32,10 @@ buffer-from@^1.0.0:
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
   integrity sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
 
-chrome-aws-lambda@1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/chrome-aws-lambda/-/chrome-aws-lambda-1.11.1.tgz#550573204be27c6c5019a300cf72cde112eae9c3"
-  integrity sha512-qLAtxBlQHl1lx8A6ujsjEzSB/rT+3fIeko8pQmmNBquEmO5Clb1zg42SFcxFGoulbMVWFZmWftwcPedeSvOXEg==
+chrome-aws-lambda@1.11.2:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/chrome-aws-lambda/-/chrome-aws-lambda-1.11.2.tgz#5cf7ed4f90157007f78a8e30a79df89ac2c48906"
+  integrity sha512-BpR7qYNkPZlMQGZI3/edrPT4Rx9Hd/Z+YV3dQ5ujfWj01r27pYYOoOmMd2w3mkmFeHF7nzFlksM/urKnfICwDQ==
 
 concat-map@0.0.1:
   version "0.0.1"
