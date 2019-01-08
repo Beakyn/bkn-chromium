@@ -1,7 +1,7 @@
 {
   "name": "bkn-chromium",
   "version": "1.0.0",
-  "description": "Chromium Puppeteer",
+  "description": "A generic Chromium Puppeteer renderer",
   "private": true,
   "license": "UNLICENSED",
   "author": {
