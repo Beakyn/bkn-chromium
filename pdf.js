@@ -6,6 +6,7 @@ module.exports = async (req, res) => {
   try {
     const {pathname = '/', query = {}} = parse(req.url, true);
     const url = getUrlFromPath(pathname);
+    const date = new Date().toISOString().split('.')[0];
 
     if (!isValidUrl(url)) {
       res.statusCode = 400;
@@ -16,7 +17,7 @@ module.exports = async (req, res) => {
 
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/pdf');
-      res.setHeader('Content-Disposition', `attachment; filename=proposal.pdf`);
+      res.setHeader('Content-Disposition', `attachment; filename=proposal-${date}.pdf`);
       res.end(file);
     }
   } catch (error) {

@@ -1,12 +1,15 @@
 {
-  "name": "onsmart-proposal-pdf-api",
+  "name": "bkn-chromium",
   "version": "1.0.0",
-  "description": "Render OnSmart Proposal PDFs",
+  "description": "Chromium Puppeteer",
   "private": true,
   "license": "UNLICENSED",
   "author": {
     "name": "Beakyn",
     "email": "contact@beakyn.com"
+  },
+  "scripts": {
+    "deploy": "now && now alias"
   },
   "dependencies": {
     "chrome-aws-lambda": "1.11.2",
