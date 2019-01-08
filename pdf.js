@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
 
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/pdf');
-      res.setHeader('Content-Disposition', `attachment; filename=proposal-${date}.pdf`);
+      res.setHeader('Content-Disposition', `attachment; filename=snapshot-${date}.pdf`);
       res.end(file);
     }
   } catch (error) {
