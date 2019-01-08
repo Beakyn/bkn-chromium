@@ -16,8 +16,6 @@ const getPDF = async (url) => {
 
   await browser.close();
 
-  console.log(file);
-
   return file;
 };
 
