@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [
+    {"src": "public/*", "use": "@now/static"},
+    {"src": "screenshot.js", "use": "@now/node", "config": {"maxLambdaSize": "40mb"}},
+    {"src": "pdf.js", "use": "@now/node", "config": {"maxLambdaSize": "40mb"}}
+  ],
+  "routes": [
+    {"src": "/", "dest": "/public/index.html"},
+    {"src": "/favicon.ico", "dest": "/public/favicon.ico"},
+    {"src": "/robots.txt", "dest": "/public/robots.txt"},
+    {"src": "/(.+)", "dest": "/pdf.js"}
+  ]
+}
