@@ -1,7 +1,7 @@
 {
   "name": "bkn-chromium",
   "version": "1.0.0",
-  "description": "A generic Chromium Puppeteer renderer",
+  "description": "A generic Chromium Puppeteer renderer with domain whitelist support hosted on Zeit Now",
   "private": true,
   "license": "UNLICENSED",
   "author": {
