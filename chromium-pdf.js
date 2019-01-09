@@ -1,16 +1,23 @@
-const chrome = require('chrome-aws-lambda');
-const puppeteer = require('puppeteer-core');
+const chrome = require("chrome-aws-lambda");
+const puppeteer = require("puppeteer-core");
 
-const getPDF = async (url) => {
+const {
+  scrapeInfiniteScrollItems
+} = require("./utils/scrape-infinite-scroll-items");
+const { extractItems } = require("./utils/extract-items");
+
+const getPDF = async url => {
   const browser = await puppeteer.launch({
     args: chrome.args,
     executablePath: await chrome.executablePath,
-    headless: chrome.headless,
+    headless: chrome.headless
   });
 
   const page = await browser.newPage();
 
-  await page.goto(url, {waitUntil: 'networkidle0', timeout: 3000000});
+  await page.goto(url, { timeout: 3000000 });
+
+  await scrapeInfiniteScrollItems(page, extractItems, 440, 3000);
 
   const file = await page.pdf();
 
@@ -19,4 +26,4 @@ const getPDF = async (url) => {
   return file;
 };
 
-module.exports = {getPDF}
+module.exports = { getPDF };
