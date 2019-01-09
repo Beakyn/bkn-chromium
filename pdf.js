@@ -10,8 +10,9 @@ module.exports = async (req, res) => {
       .toISOString()
       .split(".")[0]
       .replace(/:/g, "-");
-
+      
     const finalUrl = req.url.substring(1);
+    const fileName = query['$filename'] || `snapshot-${date}.pdf`;
 
     if (!isValidUrl(url)) {
       res.statusCode = 400;
@@ -26,7 +27,7 @@ module.exports = async (req, res) => {
       res.setHeader("Content-Type", "application/pdf");
       res.setHeader(
         "Content-Disposition",
-        `attachment; filename=snapshot-${date}.pdf`
+        `attachment; filename=${fileName}.pdf`
       );
       res.end(file);
     }
