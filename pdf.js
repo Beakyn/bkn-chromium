@@ -25,6 +25,7 @@ module.exports = async (req, res) => {
       const file = await getPDF(finalUrl, targetCount);
 
       res.statusCode = 200;
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader("Content-Type", "application/pdf");
       res.setHeader(
         "Content-Disposition",
