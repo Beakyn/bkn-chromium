@@ -13,6 +13,7 @@ module.exports = async (req, res) => {
       
     const finalUrl = req.url.substring(1);
     const fileName = query['$filename'] || `snapshot-${date}.pdf`;
+    const targetCount = parseInt(query['$targetCount']) || 10000;
 
     if (!isValidUrl(url)) {
       res.statusCode = 400;
@@ -21,7 +22,7 @@ module.exports = async (req, res) => {
         `<h1>Bad Request</h1><p>The url <em>${url}</em> is not valid.</p>`
       );
     } else {
-      const file = await getPDF(finalUrl);
+      const file = await getPDF(finalUrl, targetCount);
 
       res.statusCode = 200;
       res.setHeader("Content-Type", "application/pdf");

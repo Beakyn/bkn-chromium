@@ -6,7 +6,7 @@ const {
 } = require("./utils/scrape-infinite-scroll-items");
 const { extractItems } = require("./utils/extract-items");
 
-const getPDF = async url => {
+const getPDF = async (url, targetCount) => {
   const browser = await puppeteer.launch({
     args: chrome.args,
     executablePath: await chrome.executablePath,
@@ -17,7 +17,7 @@ const getPDF = async url => {
 
   await page.goto(url, { timeout: 3000000 });
 
-  await scrapeInfiniteScrollItems(page, extractItems, 440, 3000);
+  await scrapeInfiniteScrollItems(page, extractItems, targetCount, 3000);
 
   const file = await page.pdf();
 
