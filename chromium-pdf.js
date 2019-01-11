@@ -15,9 +15,9 @@ const getPDF = async (url, targetCount) => {
 
   const page = await browser.newPage();
 
-  await page.goto(url, { timeout: 3000000 });
+  await page.goto(url, { timeout: 0 });
 
-  await scrapeInfiniteScrollItems(page, extractItems, targetCount, 3000);
+  await scrapeInfiniteScrollItems(page, extractItems, targetCount, 5000);
 
   const file = await page.pdf();
 
