@@ -10,7 +10,7 @@ const getPDF = async (url, _targetCount) => {
 
   const page = await browser.newPage();
 
-  await page.goto(url, { timeout: 3000000 });
+  await page.goto(url, { timeout: 0 });
 
   await page.waitFor(15000);
 
